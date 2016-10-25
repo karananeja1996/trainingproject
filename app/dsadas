@@ -1,0 +1,13 @@
+
+users GET -List of all Users, POST-Insert
+    users/:id PUT (edit), GET(get details) ,DELETE(DELEETE)
+    Users Controller: Shows, allows you to create, edit, delete users
+
+project GET - List of all Projects, POST - Insert
+    project/:id GET (get name, etc, number of employees), PUT (Edit project details, not associated records), DELETE (Remove project)
+        Projects/:id/users - GET Users that are allocated to this project, POST - Will allow you to allocate an existing user to the project
+            Projects/:id/users/:user_id - GET - details of association (when he was allocated, what is role), DELETE - Remove user from the project
+
+    ProjectsController: CRUD users
+        ProjectUsers: CRUD users
+

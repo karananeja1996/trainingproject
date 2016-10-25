@@ -1,0 +1,61 @@
+
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <div id="form-container">
+
+            <div class="page-header text-center">
+                <h2>Let's Be Part Of SourceFuse</h2>
+
+                <!-- the links to our nested states using relative paths -->
+                <!-- add the active class if the state matches our ui-sref -->
+                <div id="status-buttons" class="text-center">
+                    <a ui-sref-active="active" ui-sref=".profile"><span>1</span> Profile</a>
+                </div>
+            </div>
+
+
+                    <!----    <ul class="list-unstyled">
+                        <li ng-repeat="r in projectdetail">
+
+                            <h3> <i class='fa fa-user'/> {{r.emp_name}}<i type="submit" class="fa fa-times" ng-click="seerecorddelete(r.p_id,r.emp_id)" /> </h3>
+
+                                <!--<label for="empname" style="">name</label>
+                                <input type="text" class="form-control" name="designation" ng-model="r.emp_name">
+
+
+                        </li>
+                    </ul>
+               </div>-->
+                    <div ng-controller="MyCtrl">
+                        <form ng-submit="updateRecord()">
+                            <!-- use ng-submit to catch the form submission and use our Angular function -->
+
+
+                                <!-- our nested state views will be injected here -->
+                                <div id="form-views" ui-view><!-- form-profile.html -->
+                                    <div class="form-group">
+                                        <label for="projectname" ng-model="projectdetail[0].name" style=" "> Project: {{projectdetail[0].name}}  {{projectdetail[0].p_id}}  </label>
+
+                                    </div>
+                        <div class="form-group">
+                            <label>employees</label>
+                            <select style="width: 400px;" ui-select2="select2Options" multiple ng-model="formvalue.selectedTags" id="employee_records"  data-placeholder="Pick a number">
+                                <option ng-repeat="tag in tags" value="{{tag.id}}">{{tag.emp_name}}-----------"-------{{tag.id}}</option>
+                            </select>
+
+
+                        </div>
+
+
+
+
+
+                            <button type="submit" class="btn btn-danger" ng-disabled="userForm.$invalid">submit</button>
+            </form>
+
+        </div>
+
+    </div>
+
+

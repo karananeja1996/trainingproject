@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>SourceFuse technology</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div><span style="font-weight:bold;float: left;">Projects</span><span style="font-weight:bold;float: right;"><a ui-sref="record">Allot Project</a></span></div>
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>Project Name</th>
+        <th> Employee Name</th>
+
+        <th colspan="2">Action</th>
+    </tr>
+    <tr ng-repeat="r in record">
+
+        <td>{{r.name}}</td>
+        <td>{{r.emp}}</td>
+        <td><a href="#/editrecord/{{r.p_id}}">Edit</a></td>
+        <td><button ng-click="seerecorddelete(r.p_id);">Delete</button></td>
+
+
+    </tr>
+</table>
+
+
+
+</body>
+</html>

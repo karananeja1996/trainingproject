@@ -1,0 +1,72 @@
+<html>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <div id="form-container">
+
+            <div class="page-header text-center">
+                <h2>Let's Be Part Of SourceFuse</h2>
+
+                <!-- the links to our nested states using relative paths -->
+                <!-- add the active class if the state matches our ui-sref -->
+                <div id="status-buttons" class="text-center">
+                    <a ui-sref-active="active" ui-sref=".profile"><span>1</span> Profile</a>
+                </div>
+            </div>
+            <!-- use ng-submit to catch the form submission and use our Angular function -->
+            <form id="signup-form">
+
+                <!-- our nested state views will be injected here -->
+                <div id="form-views" ui-view><!-- form-profile.html -->
+
+                    <div class="form-group">
+                        <label for="name" > Name {{name}}</label>
+                        <input type="text" class="form-control" id="emp_name" ng-model="formvalue.emp_name">
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="type" >type
+                        </label>
+                        <input type="text" class="form-control" name="type_id" ng-model="formvalue.type_id">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="designation" >Designation</label>
+
+
+                        <select ng-model="formvalue.design">
+                            <option ng-repeat="x in designations" value="{{x.id}}">{{x.design}}</option>
+                        </select>
+
+
+                        <input type="hidden" class="form-control"  name="design" value="{{formvalue.id}}" id="design" ng-model="formvalue.design">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="locn" >location</label>
+
+
+                        <select ng-model="formvalue.locn">
+                            <option ng-repeat="x in locations" value="{{x.locn_id}}">{{x.locn}}</option>
+                        </select>
+
+
+                        <input type="hidden" class="form-control"  name="locn" value="{{formvalue.locn_id}}" id="locn" ng-model="formvalue.locn">
+
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <button ng-click="processForm()" type="button" _align ="centre" class="btn btn-danger" ng-disabled="userForm.$invalid">Submit</button>
+                        </div>
+                    </div></div>
+            </form>
+
+        </div>
+
+    </div>
+</div>

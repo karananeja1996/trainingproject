@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>SourceFuse technology</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Employee List</h2>
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>SourceFuse Id</th>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th colspan="2">Action</th>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.emp_name}}</td>
+                <td>{{user.design}}</td>
+                <td>{{user.type_id}}</td>
+                <td>{{user.locn}}</td>
+                <td><a href="#/edit/{{user.id}}">Edit</a></td>
+                <td><button ng-click="deleteUser(user.id);">Delete</button></td>
+                
+            </tr>
+        </table>
+
+
+
+    </body>
+</html>
